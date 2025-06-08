@@ -1,10 +1,3 @@
-**Creating a README for HTML file**
-
-The user wants a GitHub README for an HTML file where a PUT request is made. I'll make sure the README includes a title, project description, file and content explanation, usage instructions, and deployment tips. I'll provide an example URL using the `branch` URL parameter and guide how to use it. I'll also
-
-Thought for a few seconds
-
-```markdown
 # OBS Browser Source: Scene Trigger
 
 A simple static HTML page that sends a single HTTP `PUT` request to a configurable endpoint when the page loads. Ideal for use as an OBS Browser Source or any other scenario where you want to trigger a remote action (e.g. in Unreal Engine) on page load, with an optional `branch` parameter passed via URL.
