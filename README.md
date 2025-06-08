@@ -44,7 +44,7 @@ A simple static HTML page that sends a single HTTP `PUT` request to a configurab
 
 - `branch` (integer)  
   Passed in the query string as `?branch=<number>`.  
-  - If omitted or invalid, defaults to `1`.  
+  - If omitted or invalid, defaults to `0`.  
   - Used in the JSON payload as:
     ```json
     {
