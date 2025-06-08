@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <script>
+    // Wait until the DOM is fully loaded before running our code
+    document.addEventListener('DOMContentLoaded', () => {
+      // The URL we’re sending the PUT request to
+      const ENDPOINT = 'http://127.0.0.1:30010/remote/preset/RCP_LowerThird/function/PlayAniamtion';
+
+// Parse "branch" from ?branch=… in the URL, defaulting to 0 if missing or invalid
+      const urlParams = new URLSearchParams(window.location.search);
+      const branchParam = parseInt(urlParams.get('branch'), 10);
+      const branch = Number.isInteger(branchParam) ? branchParam : 0;
+
+      // Build payload using that branch value
+      const payload = {
+        Parameters: { Branch: branch },
+        GenerateTransaction: false
+      };
+
+      // Perform the HTTP PUT
+      fetch(ENDPOINT, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'  // Tell server we’re sending JSON
+        },
+        body: JSON.stringify(payload)    // Convert JS object into JSON string
+      })
+      .then(res => {
+        // If server returns 4xx/5xx, throw to catch block
+        if (!res.ok) throw new Error(`Status ${res.status}`);
+        return res.json();               // Parse JSON on success
+      })
+      .then(data => {
+        console.log('PUT succeeded:', data);
+      })
+      .catch(err => {
+        console.error('PUT failed:', err);
+      });
+    });
+  </script>
+</body>
+</html>
