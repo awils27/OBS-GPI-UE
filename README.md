@@ -6,7 +6,7 @@ A simple static HTML page that sends a single HTTP `PUT` request to a configurab
 
 - **Single PUT on load** — fires once as soon as the DOM is ready.  
 - **Customizable endpoint** — edit the `ENDPOINT` constant to point to your server.  
-- **Dynamic branch parameter** — pass `?branch=<number>` in the URL to change the `Branch` value in the JSON payload (defaults to `1`).
+- **Dynamic branch parameter** — pass `?branch=<number>` in the URL to change the `Branch` value in the JSON payload (defaults to `0`).
 
 ## File
 
@@ -24,14 +24,14 @@ A simple static HTML page that sends a single HTTP `PUT` request to a configurab
    ```
 4. (Optional) Change the default branch by editing the fallback value in:
    ```js
-   const branch = Number.isInteger(branchParam) ? branchParam : 1;
+   const branch = Number.isInteger(branchParam) ? branchParam : 0;
    ```
 
 ---
 
 ## Usage
 
-1. **Serve** the page via any static server (e.g. `python -m http.server`, Nginx, GitHub Pages).  
+1. **Serve** the page via any static server (e.g. `python -m http.server`, Nginx, GitHub Pages) Or load it off disk as an OBS source.  
 2. **Load** in your browser or OBS Browser Source:
    ```
    http://<your-host>:<port>/index.html?branch=3
