@@ -1,6 +1,7 @@
 # OBS Browser Source: Scene Trigger
 
-A simple static HTML page that sends a single HTTP `PUT` request to a configurable endpoint when the page loads. Ideal for use as an OBS Browser Source or any other scenario where you want to trigger a remote action (e.g. in Unreal Engine) on page load, with an optional `branch` parameter passed via URL.
+A simple static HTML page that sends a single HTTP `PUT` request to a configurable endpoint when the page loads. Ideal for use as an OBS Browser Source or any other scenario where you want to trigger a remote action (e.g. in Unreal Engine) on page load, with an optional `branch` parameter passed via URL.  
+From this youtube video: [https://youtu.be/vRuTxzV2Rfo](https://youtu.be/vRuTxzV2Rfo)
 
 ## Features
 
